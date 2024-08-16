@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIXI SHAPES</title>
+
+  <style>
+    :root {
+      --section-height: 28px;
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    canvas {
+      display: block;
+      border: 4px solid black;
+      position: absolute;
+    }
+
+    #app-wrapper {
+      width: 80vw;
+      height: calc(80vh - var(--section-height) * 2 + 0.25rem);
+    }
+
+    .container {
+      padding: 10vh 10vw;
+    }
+
+    .top-info-section, .bottom-info-section {
+      display: flex;
+      padding: 0.5rem 0;
+    }
+
+    input {
+      width: 3rem;
+      border: none;
+    }
+
+    .info-wrapper {
+      border: 2px solid #000;
+      padding: 0.25rem;
+      margin-right: 0.5rem;
+    }
+
+    .bottom-settings-wrapper, .buttons-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .buttons-wrapper {
+      margin-right: 0.5rem;
+    }
+
+    .buttons-wrapper button {
+      border: 2px solid #000;
+      width: 3rem;
+      padding: 0 1rem;
+      font-size: 1.25rem;
+      color: #2073cb;
+    }
+
+    .buttons-wrapper button:hover {
+      opacity: 0.75;
+    }
+
+    .buttons-wrapper .decrease-btn {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    .buttons-wrapper .increase-btn {
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="top-info-section">
+    <div class="info-wrapper">
+      <label for="number-of-shapes">Number of current shapes:</label>
+      <input id="number-of-shapes" type="text" readonly>
+    </div>
+   <div class="info-wrapper">
+     <label for="surface-area-count">Surface area occupied by shapes:</label>
+     <input id="surface-area-count" type="text" readonly>
+   </div>
+  </div>
+  <div id="app-wrapper"></div>
+  <div class="bottom-info-section">
+    <div class="bottom-settings-wrapper">
+      <div class="buttons-wrapper">
+        <button id="shapes-decrease-btn" class="decrease-btn">-</button>
+        <button id="shapes-increase-btn" class="increase-btn">+</button>
+      </div>
+      <div class="info-wrapper">
+        <label for="shapes-per-second">Number of shapes per sec:</label>
+        <input id="shapes-per-second" type="text" readonly>
+      </div>
+    </div>
+
+    <div class="bottom-settings-wrapper">
+      <div class="buttons-wrapper">
+        <button id="gravity-decrease-btn" class="decrease-btn">-</button>
+        <button id="gravity-increase-btn" class="increase-btn">+</button>
+      </div>
+      <div class="info-wrapper">
+        <label for="gravity-value">Gravity Value:</label>
+        <input id="gravity-value" type="text" readonly>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
